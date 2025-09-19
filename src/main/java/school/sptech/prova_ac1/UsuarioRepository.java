@@ -1,5 +1,9 @@
 package school.sptech.prova_ac1;
 
-public interface UsuarioRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+    boolean existsByCpf(String cpf);
+    boolean existsByEmail(String email);
 }
